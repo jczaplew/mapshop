@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Adaptive Map Experiences - FOSS4G 2014</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="css/stack.v0.css" rel="stylesheet" type="text/css">
+    <style>
+
+    section {
+      background-image: url("images/background2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #fff;
+      padding: 2em;
+      font-family: 'Open Sans', sans-serif;
+      text-align: center;
+    }
+
+    a:link,
+    a:visited {
+      color: orange;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      height: 90%;
+      margin-top: 2.5%;
+    }
+
+    t {
+      color: #14D9FF;
+    }
+
+    .left {
+      text-align: left;
+    }
+
+    .image {
+      background: #000;
+      padding: 0;
+    }
+
+    .image-holder {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .image-holder > p {
+      margin-top: -8px;
+      font-size: 75%;
+    }
+
+    .image-holder-half {
+      height: auto;
+      width: 100%;
+      margin-top: 6%;
+    }
+
+    .image-white {
+      background-color: #fff;
+    }
+
+    .big {
+      font-size: 260%;
+      line-height: 130%;
+    }
+
+    .xbig {
+      font-size: 360%;
+      line-height: 115%;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .medium {
+      font-size: 160%;
+      line-height: 126%;
+    }
+    ul.medium {
+      text-align: left;
+    }
+
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+
+    </style>
+  </head>
+  <body>
+    <section>
+      <section-content>
+        <h1 class="xbig">Data -> Map. The Good Parts.</h1>
+        <div class="left">
+          <p>John J Czaplewski - <t>University of Wisconsin Geoscience Dept.</t><br>
+            <a href="https://twitter.com/johnjcz">@johnjcz</a></p>
+        </div>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="xbig">Spatial data manipulation!</h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="xbig">l3x!ngt_rev842_s^per-f1n@l.shp.prj.xml.json</h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content style="margin:0;">
+        <h1 class="big">Cleaning</h1>
+        <h1 class="big">Normalizing</h1>
+        <h1 class="big">Formatting</h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="xbig">File formats</h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <ul class="medium">
+          <li>Shapefile (shp)</li>
+          <li>Keyhole Markup Language (kml)</li>
+          <li>GeoJSON (geojson)</li>
+          <li>Comma Separated Values (csv)</li>
+          <li>Geodatabase (gbd)</li>
+        </ul>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <ul class="medium">
+          <li>Portable Document Format (pdf)</li>
+          <li>Excel (xls)</li>
+          <li>[Application Programming Interfaces (APIs)]</li>
+        </ul>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="xbig">Clean & Compact</h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="xbig">Toolbox</h1>
+      </section-content>
+    </section>
+
+    <section class="image image-white">
+      <div class="image-holder">
+        <img src="images/gdal.png" class="slide-image">
+      </div>
+    </section>
+
+    <section class="image image-white">
+      <div class="image-holder">
+        <img src="images/qgis.png" class="slide-image">
+      </div>
+    </section>
+
+    <section class="image image-white">
+      <div class="image-holder image-holder-half">
+        <img src="images/python.png" class="slide-image">
+      </div>
+      <div class="image-holder image-holder-half">
+        <img src="images/node.png" class="slide-image">
+      </div>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="xbig">Command line doesn't bite</h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="xbig">A note on open...</h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="xbig">Example #1: Reproject</h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="big"><a href="http://www.lrc.ky.gov/gis/gis_data.htm">Senate districts 2013</a></h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="big">NAD 1983 StatePlane Kentucky Statewide (2001) FIPS 1600</h1>
+        <h1 class="red">wtf?</h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="big">ogr2ogr senate_4326.shp -t_srs "EPSG:4326" SH001A02.shp</h1>
+      </section-content>
+    </section>
+
+    <section class="image image-white">
+      <div class="image-holder">
+        <img src="images/senate_geojson.png" class="slide-image">
+        <p><a href="https://gist.github.com/jczaplew/4c80ea08dd179fde53b4">https://gist.github.com/jczaplew/4c80ea08dd179fde53b4</a></p>
+      </div>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="xbig">Example #2: Join Attributes</h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="medium"><a href="http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_1_states_provinces.zip">Natural Earth Admin 1 States 110m</a></h1>
+        <h1 class="medium"><a href="http://www.cdc.gov/diabetes/atlas/obesityrisk/DM_STATE_ESTIMATES.xls">State diabetes estimates (CDC)</a></h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <p>ogr2ogr -sql "select ne_110m_admin_1_states_provinces.*, diabetes_2012.* from ne_110m_admin_1_states_provinces left join 'diabetes_2012.csv'.diabetes_2012 on ne_110m_admin_1_states_provinces.name = diabetes_2012.state" diabetes.shp ne_110m_admin_1_states_provinces.shp</p>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="xbig">mapshaper.org</h1>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <iframe src="http://mapshaper.org"></iframe>
+      </section-content>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="xbig">Example #4: Lexington restaurants</h1>
+      </section-content>
+    </section>
+
+    <section class="image image-white">
+      <div class="image-holder">
+        <img src="images/restaurants1.png" class="slide-image">
+      </div>
+    </section>
+
+    <section class="image">
+      <div class="image-holder">
+        <img src="images/restaurants2.png" class="slide-image">
+      </div>
+    </section>
+
+    <section class="image">
+      <div class="image-holder">
+        <img src="images/restaurants3.png" class="slide-image">
+      </div>
+    </section>
+
+
+    <section class="image">
+      <div class="image-holder">
+        <img src="images/adaptive_responsive.jpg" class="slide-image">
+        <p><a href="http://bradfrostweb.com/wp-content/uploads/2013/10/adaptive.jpg">http://bradfrostweb.com/wp-content/uploads/2013/10/adaptive.jpg</a></p>
+      </div>
+    </section>
+
+    <section class="image image-white">
+      <div class="image-holder">
+        <img src="images/acmp1.png" class="slide-image acmp">
+      </div>
+    </section>
+
+    <section>
+      <section-content>
+        <h1 class="xbig">Thanks!</h1>
+        <div class="left">
+          <p>Slides - <a href="">johnjcz.com/presentations/kygeo2014</a> <br>
+             Code/examples (CC0 1.0) - <a href="https://github.com/jczaplew/kygeo2014">github.com/jczaplew/kygeo2014</a>
+          </p>
+          <p><a href="https://twitter.com/johnjcz"><t>@johnjcz</t></a></p>
+        </div>
+      </section-content>
+    </section>
+
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/stack.v1.min.js"></script>
+    <script type="text/javascript">
+      stack();
+    </script>
+  </body>
+</html>

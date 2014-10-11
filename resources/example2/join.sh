@@ -1,0 +1,1 @@
+ogr2ogr -sql "select ne_110m_admin_1_states_provinces.*, diabetes_2012.* from ne_110m_admin_1_states_provinces left join 'diabetes_2012.csv'.diabetes_2012 on ne_110m_admin_1_states_provinces.name = diabetes_2012.state" diabetes.shp ne_110m_admin_1_states_provinces.shp
